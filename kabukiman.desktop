@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Kabukiman Dictionary
+GenericName=Dictionary Application
+Exec=kabukiman
+Terminal=false
+Type=Application
+Categories=Utility;Dictionary;
+Icon=kabukiman

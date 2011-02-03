@@ -1,0 +1,9 @@
+include README
+include COPYING
+include MANIFEST.in
+include TODO
+recursive-include glade *
+recursive-include extern *.py
+recursive-include po *
+recursive-include modules *
+recursive-include icons *

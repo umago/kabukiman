@@ -1,0 +1,9 @@
+[Core]
+Name = Google Translate
+Module = GoogleTranslate
+
+[Information]
+Author = Lucas Alvares Gomes
+Version = 0.1
+Website = http://kabukiman
+Description = A google translate module

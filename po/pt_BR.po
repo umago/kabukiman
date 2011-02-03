@@ -1,0 +1,197 @@
+# Portuguese translations for kabukiman.
+# Copyright (C) 2010 THE kabukiman'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the dictionary package.
+# Lucas A. Gomes <lucasagomes@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dictionary 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-05-23 21:57-0300\n"
+"PO-Revision-Date: 2010-05-25 22:01-0300\n"
+"Last-Translator: Lucas Alvares Gomes <lucasagomes@gmail.com>\n"
+"Language-Team: Brazilian Portuguese\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Portuguese\n"
+"X-Poedit-Country: BRAZIL\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: data/kabukiman.glade:23
+msgid "_File"
+msgstr "_Arquivo"
+
+#: data/kabukiman.glade:60
+msgid "_Edit"
+msgstr "_Editar"
+
+#: data/kabukiman.glade:97
+msgid "_Modules"
+msgstr "_Módulos"
+
+#: data/kabukiman.glade:123
+msgid "_View"
+msgstr "_Ver"
+
+#: data/kabukiman.glade:131
+msgid "Sidebar"
+msgstr "Barra lateral"
+
+#: data/kabukiman.glade:141
+msgid "Statusbar"
+msgstr "Barra de status"
+
+#: data/kabukiman.glade:154
+msgid "_Help"
+msgstr "Aj_uda"
+
+#: data/kabukiman.glade:214
+msgid "Go"
+msgstr "Vá"
+
+#: data/kabukiman.glade:266
+#: src/ui/menu_sidebar.py:24
+msgid "Results"
+msgstr "Resultados"
+
+#: data/kabukiman.glade:403
+msgid "About"
+msgstr "Sobre"
+
+#: data/kabukiman.glade:433
+msgid "Preferences"
+msgstr "Preferências"
+
+#: data/kabukiman.glade:470
+msgid "<b>Startup</b>"
+msgstr "<b>Inicialização</b>"
+
+#: data/kabukiman.glade:488
+msgid "Do not show main window at startup"
+msgstr "Não mostre a janela principal ao iniciar"
+
+#: data/kabukiman.glade:523
+msgid "<b>History</b>"
+msgstr "<b>Histórico</b>"
+
+#: data/kabukiman.glade:541
+msgid "Save history"
+msgstr "Salvar histórico"
+
+#: data/kabukiman.glade:559
+msgid "Maximum amount of words in the history:"
+msgstr "Quantidade máxima de palavras no histórico:"
+
+#: data/kabukiman.glade:605
+msgid "General"
+msgstr "Geral"
+
+#: data/kabukiman.glade:655
+msgid "To edit a shortcut, double click on the corresponding row and type a new combination key, or press backspace to disable."
+msgstr "Para editar um atalho, dê um clique duplo na linha correspondente e digite uma nova combinação de teclas, ou aperte backspace para desabilitar."
+
+#: data/kabukiman.glade:678
+msgid "Keyboard shortcuts"
+msgstr "Teclas de atalho"
+
+#: src/utils.py:36
+msgid "Cannot find home directory"
+msgstr "Não foi possível encontrar o diretório home"
+
+#: src/ui/treeview_shortcuts.py:87
+msgid "Scan selection"
+msgstr "Escanear seleção"
+
+#: src/ui/treeview_shortcuts.py:88
+msgid "Quick search"
+msgstr "Busca rápida"
+
+#: src/ui/menu_statusicon.py:25
+#: src/ui/dialog_modules.py:35
+msgid "Modules"
+msgstr "Módulos"
+
+#: src/ui/treeview_results.py:28
+#: src/ui/dialog_modules.py:50
+msgid "Name"
+msgstr "Nome"
+
+#: src/ui/dialog_modules.py:44
+msgid "Enabled"
+msgstr "Habilitado"
+
+#: src/ui/dialog_modules.py:69
+msgid "<b>Author:</b>"
+msgstr "<b>Autor:</b>"
+
+#: src/ui/dialog_modules.py:77
+msgid "<b>Version:</b>"
+msgstr "<b>Versão:</b>"
+
+#: src/ui/dialog_modules.py:85
+msgid "<b>Website:</b>"
+msgstr "<b>Website:</b>"
+
+#: src/ui/dialog_modules.py:100
+msgid "<b>Module Information</b>"
+msgstr "<b>Informações do módulo</b>"
+
+#: src/ui/dialog_modules.py:107
+msgid "Configure _Module"
+msgstr "Configurar _Módulo"
+
+#: src/main.py:62
+#, python-format
+msgid "Searching in %s"
+msgstr "Pesquisando em %s"
+
+#: src/main.py:76
+#, python-format
+msgid "%d definition(s) found"
+msgstr "%d definição(ões) encontrada(s)"
+
+#: kabukiman/main.py:234
+msgid "The meaning of life, the universe and everything"
+msgstr "O sentido da vida, do universo e tudo mais"
+
+#: src/core/shortcut_manager.py:61
+#, python-format
+msgid "Plataform %s isnt implemented yet"
+msgstr "Plataform %s ainda não implementada"
+
+#: src/core/shortcut/x11.py:25
+msgid "Xlib packaged not found"
+msgstr "Pacote Xlib não encontrado"
+
+#: scripts/kabukiman:25
+msgid ""
+"A simple and modular dictionary system.\n"
+"\n"
+"Usage: kabukiman [OPTIONS]\n"
+"\n"
+"Options:\n"
+"    -h\n"
+"    --help\n"
+"        Print this message and exit.\n"
+"\n"
+"    -V\n"
+"    --version\n"
+"        Display version information and exit.\n"
+"    "
+msgstr ""
+"Um sistema de dicionário simples e modular.\n"
+"\n"
+"Uso: kabukiman [OPÇÕES]\n"
+"\n"
+"OPÇÕES:\n"
+"    -h\n"
+"    --help\n"
+"        Imprimi essa mensagem e sai.\n"
+"\n"
+"    -V\n"
+"    --version\n"
+"        Mostra a informação da versão e sai.\n"
+"    "
+
