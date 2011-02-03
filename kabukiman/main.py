@@ -334,7 +334,7 @@ class Main:
         """ """
         timestamp = int(time.time())
         self.window_main.present_with_time(timestamp)
-        self.window_main.window.focus()
+        self.window_main.window.focus(timestamp)
         self.new_search(None)
 
     def scan_selection(self, event, word):
