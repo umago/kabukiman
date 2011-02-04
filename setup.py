@@ -21,6 +21,7 @@ import platform
 import sys
 import shutil
 import errno
+import py_compile
 from distutils.dir_util import copy_tree
 from distutils.core import setup
 from distutils import cmd
@@ -64,7 +65,6 @@ def get_folder_size(folder):
 
     return folder_size
 
-
 def build_mo():
     """ Build .po in .mo """
     po_dir = os.path.join(os.path.dirname(os.curdir), "po")
@@ -85,6 +85,14 @@ def build_mo():
                     if src_mtime > dest_mtime:
                         msgfmt.make(src, dest)
 
+def compile_py(path):
+    # Importance of .pyc:
+    # https://fedoraproject.org/wiki/Packaging:Python#Files_to_include
+    for path, names, filenames in os.walk(path):
+        for f in filenames:
+            if f.endswith(".py"):
+                src = os.path.join(path, f)
+                py_compile.compile(src)
 
 ### Debian File
 # TODO: Compile .po's file
@@ -123,6 +131,8 @@ if "--deb" in sys.argv:
             dest = BUILD_DIR + basedir
             mkdir_p(dest)
             shutil.copy2(f[0], dest)
+
+    compile_py(BUILD_DIR)
 
     # Creating the control file
     CONTROL_TEMPLATE = """\

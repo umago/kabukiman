@@ -45,7 +45,7 @@ License
 -------
 
 Kabukiman is distributed under the terms of the GNU General Public License, version 3 or later.
-See the COPYING file for more information.
+See the [COPYING][4] file for more information.
 
 Contributor list
 ----------------
@@ -65,5 +65,7 @@ Please take a look at [TODO][3] file to see bugs and not-implemented-yet
 features.
 
 [1]: http://github.com/umago/kabukiman/issues
-[2]: http://kabukiman.umago.info
+[2]: http://umago.info/kabukiman
 [3]: https://github.com/umago/kabukiman/blob/master/TODO
+[4]: https://github.com/umago/kabukiman/blob/master/COPYING
+
