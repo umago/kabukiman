@@ -39,12 +39,12 @@ All shortcuts can be configured in the preferences dialog (CTRL + P).
 Creating a module
 -----------------
 
-Please check this [page][2]
+Please check this [page][2].
 
 License
 -------
 
-Kabukiman is distributed under the terms of the GNU General Public License, version 3 or later.
+Kabukiman is distributed under the terms of the GNU General Public License, version 2.
 See the [COPYING][4] file for more information.
 
 Contributor list
