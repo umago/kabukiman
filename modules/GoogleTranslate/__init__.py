@@ -76,13 +76,17 @@ class GoogleTranslate(Module):
             search_results = search_results.read()
             json = simplejson.loads(search_results)
             if json:
+                response_data = json["responseData"]
+                if response_data is None:
+                    continue
+
                 # Insert a space between the results
                 if num > 0:
                     result += '\n'
 
                 # If not lang google will guess to us :)~
                 if not from_lang:
-                    from_lang = json["responseData"]["detectedSourceLanguage"]
+                    from_lang = response_data["detectedSourceLanguage"]
 
                 try:
                     from_lang = LANGUAGES[from_lang]
@@ -90,7 +94,8 @@ class GoogleTranslate(Module):
                     # TODO: Message
                     pass
                 to_lang = LANGUAGES[to_lang]
-                result += "<b>[%s -> %s]</b>\n<quote>%s</quote>\n" % (from_lang, to_lang, json["responseData"]["translatedText"])
+                result += "<b>[%s -> %s]</b>\n<quote>%s</quote>\n" % (from_lang,
+                          to_lang, response_data["translatedText"])
         return self._remove_html_codes(result)
 
     def _remove_html_codes(self, text):
