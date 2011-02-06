@@ -74,7 +74,10 @@ class GoogleTranslate(Module):
             url = base_url + data
             search_results = urllib.urlopen(url)
             search_results = search_results.read()
-            json = simplejson.loads(search_results)
+            try:
+                json = simplejson.loads(search_results)
+            except simplejson.JSONDecodeError:
+                continue
             if json:
                 response_data = json["responseData"]
                 if response_data is None:
