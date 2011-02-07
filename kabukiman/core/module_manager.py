@@ -4,7 +4,7 @@
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or
+# the Free Software Foundation; either version 3 of the License, or
 # (at your option) any later version.
 #
 # This program is distributed in the hope that it will be useful,
@@ -38,7 +38,6 @@ class ModuleManager:
         """
         modules = list()
         for path in paths:
-            print path
             if path[-1] != os.sep:
                 path += os.sep
             if not path in sys.path:
@@ -85,9 +84,7 @@ class ModuleManager:
             module_path = os.sep.join((os.path.dirname(m), module))
 
             try:
-                module_tmp = __import__("kabukiman.modules."+module, None, None, [], -1)
-                module_obj = sys.modules["kabukiman.modules."+module]
-                instance = getattr(module_obj, module)()
+                instance = getattr(__import__(module, None, None, [], -1), module)()
                 assert isinstance(instance, Module)
                 instance._load_informations(module, name, module_path, author,\
                                             version, website, description)
