@@ -37,12 +37,12 @@ def init_gettext():
 
 APP_NAME = "kabukiman"
 LOCALEDIR = ''
-DATADIR = "/usr/local/share/kabukiman"
+DATADIR = sys.prefix+"/share/kabukiman"
 ICONS_DIR = os.path.join(DATADIR, "icons")
 CONFIGDIR = os.path.join(get_home_dir(), '.' + APP_NAME)
 CONFIG_FILE = os.path.join(CONFIGDIR, "kabukiman.conf")
 MODULES_DIRS = list((os.path.join(CONFIGDIR, "modules"), \
-             os.path.join(sys.prefix, "local", "lib", "kabukiman", "modules")))
+             os.path.join(DATADIR, "modules")))
 GLADE_NAME = os.path.join(DATADIR, "glade", APP_NAME + ".glade")
 COPYRIGHT = "(C) 2010 Lucas Alvares Gomes"
 AUTHORS = (

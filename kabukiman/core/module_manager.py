@@ -38,6 +38,7 @@ class ModuleManager:
         """
         modules = list()
         for path in paths:
+            print path
             if path[-1] != os.sep:
                 path += os.sep
             if not path in sys.path:
@@ -84,7 +85,9 @@ class ModuleManager:
             module_path = os.sep.join((os.path.dirname(m), module))
 
             try:
-                instance = getattr(__import__(module, None, None, [], -1), module)()
+                module_tmp = __import__("kabukiman.modules."+module, None, None, [], -1)
+                module_obj = sys.modules["kabukiman.modules."+module]
+                instance = getattr(module_obj, module)()
                 assert isinstance(instance, Module)
                 instance._load_informations(module, name, module_path, author,\
                                             version, website, description)
