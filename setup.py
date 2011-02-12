@@ -32,6 +32,7 @@ from extern import msgfmt
 from kabukiman.version import get_version
 
 
+# http://www.debian.org/doc/packaging-manuals/python-policy/ap-packaging_tools.html
 if "--prefix=" in sys.argv:
     print >> sys.stderr, "Prefix not supported"
     sys.exit(-1)

@@ -5,5 +5,5 @@ Module = GoogleTranslate
 [Information]
 Author = Lucas Alvares Gomes
 Version = 0.1
-Website = http://kabukiman
+Website = http://umago.info
 Description = A google translate module

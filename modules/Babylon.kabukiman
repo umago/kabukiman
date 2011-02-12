@@ -1,0 +1,9 @@
+[Core]
+Name = Babylon
+Module = Babylon
+
+[Information]
+Author = Lucas Alvares Gomes
+Version = 0.1-alpha
+Website = http://umago.info
+Description = A babylon (bgl files) module

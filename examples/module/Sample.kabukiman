@@ -1,0 +1,9 @@
+[Core]
+Name = Sample Module
+Module = Sample
+
+[Information]
+Author = Sample
+Version = 0.0
+Website = http://foo.sample
+Description = A sample module
