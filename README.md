@@ -6,6 +6,7 @@ your own modules and extend its functionality quite easily.
 
 Modules that come by default:
     * Google Translate
+    * Babylon (alpha)
 
 Requirements
 ------------

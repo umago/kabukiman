@@ -19,9 +19,13 @@ import gtk
 import os
 import cPickle
 import errno
+import gobject
+
+from threading import Thread
 
 from kabukiman.utils import *
 from babylon import *
+from dialog_progress import DialogProgress
 
 class BglTreeview(gtk.TreeView):
     def __init__(self, config_path):
@@ -139,27 +143,45 @@ class DialogConfig(gtk.Dialog):
 
     def file_selected(self, widget):
         """  """
+        self.parsing_error = 0
         file_path = widget.get_filename()
 
+        d = DialogProgress(parent=self)
+        t = Thread(target=self._parse_dictionary, args=(file_path, d.destroy,))
+        t.start()
+        d.run()
+
+        if self.parsing_error == 1:
+            self.error("Its not a BGL file")
+        elif self.parsing_error == 2:
+            self.error("Cannt create the configuration dir")
+
+        widget.set_current_folder(get_home_dir())
+
+    def _parse_dictionary(self, file_path, finish_callback):
+        """  """
         try:
             bp = BabylonParser(file_path)
         except NotBglFile:
-            self.error("Its not a bgl file")
-            widget.set_current_folder(get_home_dir())
-            return False
+            self.parsing_error = 1
+            gobject.idle_add(finish_callback)
+            return True
 
         if not os.path.exists(self.config_path):
             try:
                 os.mkdir(self.config_path)
             except OSError:
-                self.error("Cannt create the configuration dir")
-                widget.set_current_folder(get_home_dir())
-                return False
+                self.parsing_error = 2
+                gobject.idle_add(finish_callback)
+                return True
 
         title = bp.title
         dest_file = os.path.join(self.config_path, title)
         bp.save_to_file(dest_file)
-        self.treeview.add_dictionary(title, dest_file)
+        gobject.idle_add(self.treeview.add_dictionary, title, dest_file)
+
+        gobject.idle_add(finish_callback)
+        return True
 
     def error(self, msg):
         md = gtk.MessageDialog(self, 
