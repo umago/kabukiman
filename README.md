@@ -1,8 +1,9 @@
 Kabukiman
 =========
 
-Kabukiman is a simple dictionary application which allows you to create
-your own modules and extend its functionality quite easily.
+Kabukiman is a small dictionary application that uses modules to look up for
+the words/expressions. The idea is that anybody can write modules for
+Kabukiman and so extend its functionality. 
 
 Modules that come by default:
     * Google Translate
