@@ -63,8 +63,8 @@ class LookUpThread(Thread):
             func = getattr(module, "look_up", None)
             if func and callable(func):
                 # User feedback
-                self.parent.statusbar.push(0, _("Searching in %s") \
-                                           % module._name)
+                gobject.idle_add(self.parent.statusbar.push, 0, _("Searching in %s") \
+                                                                % module._name)
 
                 try:
                     result = func(self.word)
@@ -82,8 +82,8 @@ class LookUpThread(Thread):
                     # Threads and GUI :/
                     gobject.idle_add(self._insert_result, module._name, result)
                     number_of_results += 1
-        self.parent.statusbar.push(0, _("%d definition(s) found") \
-                                   % number_of_results)
+        gobject.idle_add(self.parent.statusbar.push, 0, _("%d definition(s) found") \
+                                                        % number_of_results)
 
     def _insert_result(self, module_name, result):
         """Insert the result to the result area
